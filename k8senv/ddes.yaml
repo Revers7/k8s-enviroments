@@ -1,0 +1,20 @@
+cluster: k8s-dockeredsktop
+resources:
+- apiVersion: apps/v1
+  kind: Deployment
+  namespace: xautomata
+  name: api
+  versions:
+    app: acrcostmanagement.azurecr.io/api-env/api:4.1.28.13-dev
+    chart: null
+  field_errors:
+    chart: no_match
+- apiVersion: apps/v1
+  kind: Deployment
+  namespace: xautomata
+  name: frontend
+  versions:
+    app: acrcostmanagement.azurecr.io/api-env/frontend:2.30.1
+    chart: null
+  field_errors:
+    chart: no_match
